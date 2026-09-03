@@ -1,0 +1,12 @@
+{
+  "name": "crud-node-mongodb",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install --prefix back && npm install --prefix front",
+    "dev": "concurrently \"npm run dev --prefix back\" \"npm run dev --prefix front\"",
+    "build": "npm run build --prefix back && npm run build --prefix front"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

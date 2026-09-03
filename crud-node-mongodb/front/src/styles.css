@@ -1,0 +1,886 @@
+:root {
+  --primary: #9b7ede;
+  --primary-dark: #7656b8;
+  --primary-light: #eee8ff;
+
+  --pink: #e89ac7;
+  --pink-light: #fcecf5;
+
+  --background: #f8f6fc;
+  --card: #ffffff;
+
+  --text: #302b3d;
+  --text-light: #777184;
+
+  --border: #e6e0ef;
+
+  --danger: #d96b88;
+  --danger-light: #fdecef;
+
+  --success: #72ad91;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  background:
+    var(--background);
+
+  color:
+    var(--text);
+}
+
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+  width:
+    min(
+      1100px,
+      92%
+    );
+
+  margin:
+    40px auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+  margin-bottom:
+    24px;
+}
+
+
+header h1 {
+  margin:
+    0 0 6px;
+
+  color:
+    var(--text);
+}
+
+
+header p {
+  margin:
+    0;
+
+  color:
+    var(--text-light);
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+  background:
+    var(--card);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    16px;
+
+  padding:
+    26px;
+
+  margin-bottom:
+    24px;
+
+  box-shadow:
+    0 8px 25px
+    rgba(
+      93,
+      72,
+      130,
+      0.08
+    );
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+}
+
+
+/* Cabeçalho do formulário */
+
+.form-header {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    14px;
+
+  padding-bottom:
+    20px;
+
+  border-bottom:
+    1px solid
+    var(--border);
+
+  margin-bottom:
+    22px;
+}
+
+
+.form-icon {
+  width:
+    44px;
+
+  height:
+    44px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border-radius:
+    12px;
+
+  background:
+    var(--primary-light);
+
+  color:
+    var(--primary-dark);
+
+  font-size:
+    20px;
+}
+
+
+.form-header h2 {
+  margin:
+    0 0 4px;
+
+  color:
+    var(--text);
+}
+
+
+.form-header p {
+  margin:
+    0;
+
+  color:
+    var(--text-light);
+
+  font-size:
+    14px;
+}
+
+
+/* Conteúdo */
+
+.form-content {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    18px;
+}
+
+
+/* Campos */
+
+.field {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    8px;
+}
+
+
+.field > span {
+  font-size:
+    14px;
+
+  font-weight:
+    600;
+
+  color:
+    var(--text);
+}
+
+
+.field input,
+.field textarea {
+  width:
+    100%;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    10px;
+
+  padding:
+    12px 14px;
+
+  background:
+    #fff;
+
+  color:
+    var(--text);
+
+  outline:
+    none;
+
+  transition:
+    border-color
+    0.2s,
+    box-shadow
+    0.2s;
+}
+
+
+.field input:focus,
+.field textarea:focus {
+  border-color:
+    var(--primary);
+
+  box-shadow:
+    0 0 0 3px
+    var(--primary-light);
+}
+
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color:
+    #aaa2b5;
+}
+
+
+.field textarea {
+  min-height:
+    110px;
+
+  resize:
+    vertical;
+}
+
+
+/* =========================
+   SEÇÃO DE INFORMAÇÕES
+========================= */
+
+.form-section-title {
+  margin-top:
+    4px;
+
+  padding-top:
+    4px;
+
+  font-size:
+    13px;
+
+  font-weight:
+    700;
+
+  color:
+    var(--primary-dark);
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.04em;
+}
+
+
+/* =========================
+   PREÇO + ESTOQUE
+========================= */
+
+.form-row {
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:
+    16px;
+}
+
+
+/* Campo de preço */
+
+.input-prefix {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    10px;
+
+  overflow:
+    hidden;
+
+  background:
+    #fff;
+}
+
+
+.input-prefix:focus-within {
+  border-color:
+    var(--primary);
+
+  box-shadow:
+    0 0 0 3px
+    var(--primary-light);
+}
+
+
+.input-prefix > span {
+  padding-left:
+    14px;
+
+  color:
+    var(--text-light);
+
+  font-size:
+    14px;
+}
+
+
+.input-prefix input {
+  border:
+    0;
+
+  box-shadow:
+    none;
+}
+
+
+.input-prefix input:focus {
+  box-shadow:
+    none;
+}
+
+
+/* =========================
+   BOTÕES DO FORMULÁRIO
+========================= */
+
+.form-actions {
+  display:
+    flex;
+
+  justify-content:
+    flex-end;
+
+  align-items:
+    center;
+
+  gap:
+    10px;
+
+  margin-top:
+    6px;
+
+  padding-top:
+    20px;
+
+  border-top:
+    1px solid
+    var(--border);
+}
+
+
+.form-actions button {
+  min-width:
+    150px;
+}
+
+
+.submit-button {
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--primary-dark)
+    );
+}
+
+
+/* =========================
+   BOTÕES GERAIS
+========================= */
+
+button {
+  border:
+    0;
+
+  border-radius:
+    9px;
+
+  padding:
+    10px 15px;
+
+  cursor:
+    pointer;
+
+  background:
+    var(--primary);
+
+  color:
+    white;
+
+  font-weight:
+    600;
+
+  transition:
+    transform
+    0.15s,
+    opacity
+    0.15s,
+    box-shadow
+    0.15s;
+}
+
+
+button:hover {
+  opacity:
+    0.92;
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 4px 10px
+    rgba(
+      118,
+      86,
+      184,
+      0.18
+    );
+}
+
+
+button.secondary {
+  background:
+    #aaa1b8;
+}
+
+
+button.danger {
+  background:
+    var(--danger);
+}
+
+/* =========================
+   CABEÇALHO DA LISTA
+========================= */
+
+.section-header {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  margin-bottom:
+    20px;
+}
+
+.section-header h2 {
+  margin:
+    0;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    10px;
+
+  color:
+    var(--text);
+}
+
+
+/* Ícone antes de "Produtos cadastrados" */
+
+.section-header h2::before {
+  content:
+    "✦";
+
+  width:
+    34px;
+
+  height:
+    34px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border-radius:
+    10px;
+
+  background:
+    var(--primary-light);
+
+  color:
+    var(--primary-dark);
+
+  font-size:
+    16px;
+}
+
+
+/* =========================
+   BOTÃO ATUALIZAR
+========================= */
+
+.section-header button {
+  background:
+    var(--primary);
+
+  box-shadow:
+    0 4px 10px
+    rgba(
+      118,
+      86,
+      184,
+      0.15
+    );
+}
+
+
+/* =========================
+   TABELA
+========================= */
+
+.table-wrapper {
+  overflow-x:
+    auto;
+}
+
+table {
+  border-collapse:
+    separate;
+
+  border-spacing:
+    0;
+
+  width:
+    100%;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    12px;
+}
+
+
+/* Cabeçalho */
+
+th {
+  padding:
+    13px;
+
+  background:
+    var(--primary-light);
+
+  color:
+    var(--primary-dark);
+
+  font-size:
+    14px;
+
+  font-weight:
+    700;
+
+  text-align:
+    left;
+
+  border-bottom:
+    1px solid
+    var(--border);
+}
+
+
+/* Células */
+
+td {
+  padding:
+    13px;
+
+  background:
+    #fff;
+
+  color:
+    var(--text);
+
+  border-bottom:
+    1px solid
+    var(--border);
+
+  text-align:
+    left;
+}
+
+
+/* Remove a borda da última linha */
+
+tbody tr:last-child td {
+  border-bottom:
+    0;
+}
+
+
+/* Efeito ao passar o mouse */
+
+tbody tr:hover td {
+  background:
+    #fcfaff;
+}
+
+
+/* =========================
+   PREÇO
+========================= */
+
+tbody td:nth-child(3) {
+  color:
+    var(--primary-dark);
+
+  font-weight:
+    700;
+}
+
+
+/* =========================
+   ESTOQUE
+========================= */
+
+tbody td:nth-child(4) {
+  color:
+    var(--text);
+
+  font-weight:
+    600;
+}
+
+
+/* =========================
+   AÇÕES
+========================= */
+
+.actions {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    8px;
+}
+
+.actions button {
+  padding:
+    8px 12px;
+
+  font-size:
+    13px;
+}
+
+
+/* Botão editar */
+
+.actions button:not(.danger) {
+  background:
+    var(--primary-light);
+
+  color:
+    var(--primary-dark);
+
+  box-shadow:
+    none;
+}
+
+
+/* Botão excluir */
+
+.actions button.danger {
+  background:
+    var(--danger);
+
+  color:
+    white;
+}
+
+
+/* =========================
+   ESTADO VAZIO
+========================= */
+
+.empty {
+  color:
+    var(--text-light);
+
+  text-align:
+    center;
+
+  padding:
+    30px;
+}
+
+/* =========================
+   ERRO
+========================= */
+
+.error {
+  background:
+    var(--danger-light);
+
+  color:
+    #9b405b;
+
+  border:
+    1px solid
+    #f3c6d2;
+
+  border-radius:
+    10px;
+
+  padding:
+    12px;
+
+  margin-bottom:
+    20px;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (
+  max-width: 700px
+) {
+
+  .container {
+    margin:
+      20px auto;
+  }
+
+
+  .card {
+    padding:
+      18px;
+  }
+
+
+  .form-row {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .form-actions {
+    flex-direction:
+      column-reverse;
+
+    align-items:
+      stretch;
+  }
+
+
+  .form-actions button {
+    width:
+      100%;
+  }
+
+
+  .section-header {
+    align-items:
+      flex-start;
+
+    gap:
+      12px;
+
+    flex-direction:
+      column;
+  }
+
+
+  .actions {
+    flex-wrap:
+      wrap;
+  }
+
+}
